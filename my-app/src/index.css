@@ -19,7 +19,7 @@ body {
 
 .shoppingList {
     padding-top: unset;
-    margin:unset;
+    margin: unset;
     width: 500px;
     max-height: 100vh;
     overflow: auto;
@@ -42,6 +42,7 @@ body {
 #children-pane {
     margin-left: 15px;
     position: absolute;
+    width: 420px;
     height: calc(100% - (30vh + 30px));
     overflow: auto;
     top: calc(30vh + 30px);
@@ -50,27 +51,59 @@ body {
     overflow: auto;
 }
 
-#textfieldz{
-    margin-bottom:10px;
-    background-color:white;
-}
 
+
+#textfieldz {
+    float:left;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-color: white;
+}
+#quant {
+    float: left;
+    margin-left:5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-color: white;
+}
 #addButton img {
     position: fixed;
-    left: 350px;
-    top: calc(30vh + 30px);
-    margin-right: 10px;
-    height: 55px;
+    left: 250px;
+    top: calc(20vh + 15px);
+    padding-top: 1vh;
+    height: 8vh;
     width: auto;
+    cursor: pointer;
 }
 
+#trash {
+    position: fixed;
+    left: 320px;
+    top: calc(20vh + 15px);
+    padding-top: 1vh;
+    height: 8vh;
+    width: auto;
+    cursor: pointer;
+    transform: scaleX(-1);
+}
+
+#search {
+    position: fixed;
+    left: 380px;
+    top: calc(20vh + 15px);
+    padding-top: 1vh;
+    height: 8vh;
+    width: auto;
+    cursor: pointer;
+    transform: scaleX(-1);
+}
 
 .recipeList {
     position: fixed;
     right: 0;
     top: calc(20vh + 15px);
     bottom: 0;
-    width: calc(100% - 500px);
+    width: calc(100% - 440px);
     height: calc(100% - (20vh + 15px));
     margin-left: 15px;
     color: #374B73;
@@ -79,7 +112,7 @@ body {
 
     .recipeList h1 {
         color: #374B73;
-        width: calc(100% - 500px);
+        width: calc(100% - 440px);
         margin-top:unset;
         padding-left:15px;
     }
