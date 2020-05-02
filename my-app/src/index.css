@@ -1,19 +1,46 @@
+*{
+    box-sizing:border-box;
+}
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
 }
-#firstTextField{
-   
+
+.shoppingList {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    overflow: auto;
+    margin-left:15px;
+}
+
+#firstTextField {
+    float: left;
+    margin-bottom: 15px;
+}
+
+#textfieldz {
+    margin-top: 15px;
 }
 
 button {
-    float: right;
+    position:fixed;
+    margin-left:15px;
     font-size: 2em;
     font-weight: bold;
     border-radius: 5px;
     background-color: white;
 }
 
-#firstTextField{
-    float:left;
+
+.recipeList {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%;
+    height: 100%;
+    overflow: auto;
+    margin-left: 15px;
 }

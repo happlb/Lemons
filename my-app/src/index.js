@@ -124,11 +124,11 @@ class IngredientList extends React.Component {
         };
 
         return (
-            <div className="shopping-list">
-                <h1>My Ingredients {this.props.name}</h1>
+            <div>
+            <div className="shoppingList">
+                <h1>My Ingredients</h1>
                 <div id="firstTextField">
                     <Autocomplete
-                        id="combo-box-demo"
                         options={ingredients}
                         //getOptionLabel={(option) => option.title}
                         style={{ width: 300 }}
@@ -140,7 +140,13 @@ class IngredientList extends React.Component {
                         {children}
                     </ParentComponent>
                 </div>
-            </div>
+                </div>
+                <div className="recipeList">
+                    <h1>My Recipes</h1>
+                </div>
+
+                </div>
+            
            
 
         );
@@ -162,14 +168,19 @@ const ParentComponent = props => (
     </div>
 );
 
-const ChildComponent = props => <div>{<Autocomplete
-    id="textfieldz"
+const ChildComponent = props => <div id="textfieldz">{
+    <Autocomplete
     options={ingredients}
     //getOptionLabel={(option) => option.title}
     style={{ width: 300 }}
     renderInput={(params) => <TextField {...params} label="Add an Ingredient" variant="outlined" />}
 />}</div>;
 
+function myFunction() {
+    var elmnt = document.getElementById("firstTextField");
+    var txt = "Height including padding and border: " + elmnt.offsetHeight + "px<br>";
+    document.body.style.height = document.getElementById("firstTextField").clientHeight + 400 + 'px';
+}
 /* eslint-disable no-use-before-define */
 
 
