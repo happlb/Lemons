@@ -27,10 +27,11 @@ body {
 }
 
     .shoppingList h1 {
+        position: fixed;
         padding-top: unset;
         margin-top: 15px;
         margin-bottom: 15px;
-        padding-left:15px
+        padding-left: 15px
     }
 
 #firstTextField {
@@ -41,7 +42,12 @@ body {
 #children-pane {
     margin-left: 15px;
     position: absolute;
+    height: calc(100% - (30vh + 30px));
+    overflow: auto;
+    top: calc(30vh + 30px);
     left: 0;
+    max-height: 100vh;
+    overflow: auto;
 }
 
 #textfieldz{
@@ -49,10 +55,10 @@ body {
     background-color:white;
 }
 
-#addButton img{
-    position:fixed;
-    left:350px;
-   
+#addButton img {
+    position: fixed;
+    left: 350px;
+    top: calc(30vh + 30px);
     margin-right: 10px;
     height: 55px;
     width: auto;
@@ -60,12 +66,12 @@ body {
 
 
 .recipeList {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: calc(20vh + 15px);
+    bottom: 0;
     width: calc(100% - 500px);
-    height: 100vh;
-    overflow: auto;
+    height: calc(100% - (20vh + 15px));
     margin-left: 15px;
     color: #374B73;
     border-left: 15px solid #374B73;
@@ -87,6 +93,7 @@ body {
 }
 
 .mainheader {
+
     height: 20vh;
     background-color: #FFF1ED;
 }
