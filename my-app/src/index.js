@@ -126,13 +126,15 @@ class IngredientList extends React.Component {
         return (
             <div className="shopping-list">
                 <h1>My Ingredients {this.props.name}</h1>
-                <Autocomplete
-                    id="combo-box-demo"
-                    options={ingredients}
-                    //getOptionLabel={(option) => option.title}
-                    style={{ width: 300 }}
-                    renderInput={(params) => <TextField {...params} label="Add an Ingredient" variant="outlined" />}
-                />
+                <div id="firstTextField">
+                    <Autocomplete
+                        id="combo-box-demo"
+                        options={ingredients}
+                        //getOptionLabel={(option) => option.title}
+                        style={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} label="Add an Ingredient" variant="outlined" />}
+                    />
+                </div>
                 <div>
                     <ParentComponent addChild={this.onAddChild}>
                         {children}
@@ -152,15 +154,21 @@ class IngredientList extends React.Component {
 
 
 const ParentComponent = props => (
-    <div className="addButton">
-        <p><button onClick={props.addChild}>Add Another Child Component</button></p>
+    <div id="addButton">
+        <p><button onClick={props.addChild}>+</button></p>
         <div id="children-pane">
             {props.children}
         </div>
     </div>
 );
 
-const ChildComponent = props => <div>{"I am child " + props.number}</div>;
+const ChildComponent = props => <div>{<Autocomplete
+    id="textfieldz"
+    options={ingredients}
+    //getOptionLabel={(option) => option.title}
+    style={{ width: 300 }}
+    renderInput={(params) => <TextField {...params} label="Add an Ingredient" variant="outlined" />}
+/>}</div>;
 
 /* eslint-disable no-use-before-define */
 
