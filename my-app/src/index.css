@@ -7,11 +7,9 @@ body {
 }
 
 .shoppingList {
-    position: relative;
-    left: 0;
-    top: 0;
+    
     width: 500px;
-    height:100vh;
+    max-height:100vh;
     overflow: auto;
     margin-left:15px;
 }
@@ -22,15 +20,22 @@ body {
 }
 
 #children-pane {
+    margin-left: 15px;
     position: absolute;
-    left:0;
+    left: 0;
 }
 
-#addButton {
-    float:right !important;
-    margin-right:10px;
-    height:55px;
-    width:auto;
+#textfieldz{
+    margin-bottom:10px;
+}
+
+#addButton img{
+    position:fixed;
+    left:350px;
+    bottom:0px;
+    margin-right: 10px;
+    height: 55px;
+    width: auto;
 }
 
 
@@ -38,7 +43,7 @@ body {
     position: fixed;
     right: 0;
     top: 0;
-    width: 10%;
+    width: 50%;
     height: 100%;
     overflow: auto;
     margin-left: 15px;
