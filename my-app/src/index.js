@@ -60,24 +60,33 @@ const ParentComponent = props => (
     </div>
 );
 
-const ChildComponent = props => <div id="textfieldz">{
+const ChildComponent = props =>
+    <div id="textfieldz">{
     <Autocomplete
     options={ingredients}
     //getOptionLabel={(option) => option.title}
     style={{ width: 300 }}
     renderInput={(params) => <TextField {...params} label="Add an Ingredient" variant="outlined" />}
-/>}</div>;
+    />
+    }</div>;
 
-function myFunction() {
-    var elmnt = document.getElementById("firstTextField");
-    var txt = "Height including padding and border: " + elmnt.offsetHeight + "px<br>";
-    document.body.style.height = document.getElementById("firstTextField").clientHeight + 400 + 'px';
+
+const setButtonHeight = props => {
+    var elmnt = document.getElementById("textfieldz");
+    console.log("here");
+    // var txt = "Height including padding and border: " + elmnt.offsetHeight + "px<br>";
+    // document.getElementById("addButton").height = elmnt.offsetHeigh * (numChildren-1) + 'px';
 }
-
 
 // ========================================
 
 ReactDOM.render(<IngredientList />, document.getElementById("root"));
+/*function setButtonHeight() {
+    var elmnt = document.getElementById("textfieldz");
+    console.log("here");
+    // var txt = "Height including padding and border: " + elmnt.offsetHeight + "px<br>";
+    // document.getElementById("addButton").height = elmnt.offsetHeigh * (numChildren-1) + 'px';
+}*/
 
 
 

@@ -32,7 +32,7 @@ body {
 #addButton img{
     position:fixed;
     left:350px;
-    bottom:0px;
+   
     margin-right: 10px;
     height: 55px;
     width: auto;
@@ -42,7 +42,7 @@ body {
 .recipeList {
     position: fixed;
     right: 0;
-    top: 0;
+    top: 18.76px;
     width: 50%;
     height: 100%;
     overflow: auto;
