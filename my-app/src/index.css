@@ -1,18 +1,37 @@
-*{
-    box-sizing:border-box;
+/*
+light pink FFF1ED
+hot pink FF8197
+pink again #FF9A9A
+pink idk #FFE3E3
+yellow E1CC17
+navy 374B73
+*/
+
+* {
+    box-sizing: border-box;
 }
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
+    background-color: white;
+    margin: unset;
 }
 
 .shoppingList {
-    
+    padding-top: unset;
+    margin:unset;
     width: 500px;
-    max-height:100vh;
+    max-height: 100vh;
     overflow: auto;
-    margin-left:15px;
+    color: #374B73;
 }
+
+    .shoppingList h1 {
+        padding-top: unset;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-left:15px
+    }
 
 #firstTextField {
     float: left;
@@ -27,6 +46,7 @@ body {
 
 #textfieldz{
     margin-bottom:10px;
+    background-color:white;
 }
 
 #addButton img{
@@ -40,11 +60,37 @@ body {
 
 
 .recipeList {
-    position: fixed;
+    position: absolute;
     right: 0;
-    top: 18.76px;
-    width: 50%;
-    height: 100%;
+    top: calc(20vh + 15px);
+    width: calc(100% - 500px);
+    height: 100vh;
     overflow: auto;
     margin-left: 15px;
+    color: #374B73;
+    border-left: 15px solid #374B73;
+}
+
+    .recipeList h1 {
+        color: #374B73;
+        width: calc(100% - 500px);
+        margin-top:unset;
+        padding-left:15px;
+    }
+
+.miniHeader h1 {
+    background-color: #FF8197;
+    padding-top: 2vh;
+    height: 10vh;
+    color: white;
+    width: 100%;
+}
+
+.mainheader {
+    height: 20vh;
+    background-color: #FFF1ED;
+}
+#logo {
+    height: 20vh;
+    width:auto;
 }

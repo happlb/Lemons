@@ -4,6 +4,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 import './index.css';
 import cartplussolid from './myImgs/cartplussolid.svg';
+import logo from './myImgs/logo.PNG';
 //add button img source button img source: https://fontawesome.com/icons/cart-plus?style=solid
 
 const ingredients = ["onion", "milk", "eggs", "apple", "jalapeno"];
@@ -24,8 +25,13 @@ class IngredientList extends React.Component {
 
         return (
             <div>
-            <div className="shoppingList">
-                <h1>My Ingredients</h1>
+                <div className='mainheader'>
+                    <img id='logo' src={logo} />
+                </div>
+                <div className="shoppingList">
+                    <div className='miniHeader'>
+                        <h1>My Ingredients</h1>
+                    </div>
                
                 <div>
                     <ParentComponent addChild={this.onAddChild}>
@@ -34,7 +40,9 @@ class IngredientList extends React.Component {
                 </div>
                 </div>
                 <div className="recipeList">
-                    <h1>My Recipes</h1>
+                    <div className='miniHeader'>
+                        <h1>My Recipes</h1>
+                    </div>
                 </div>
 
                 </div>
@@ -70,13 +78,6 @@ const ChildComponent = props =>
     />
     }</div>;
 
-
-const setButtonHeight = props => {
-    var elmnt = document.getElementById("textfieldz");
-    console.log("here");
-    // var txt = "Height including padding and border: " + elmnt.offsetHeight + "px<br>";
-    // document.getElementById("addButton").height = elmnt.offsetHeigh * (numChildren-1) + 'px';
-}
 
 // ========================================
 
