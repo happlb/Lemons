@@ -4,8 +4,8 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 import './index.css';
 
-//var ingredients = ["onion", "milk", "eggs", "apple", "jalapeno"];
-const ingredients = [
+const ingredients = ["onion", "milk", "eggs", "apple", "jalapeno"];
+/*const ingredients = [
     { title: 'The Shawshank Redemption', year: 1994 },
     { title: 'The Godfather', year: 1972 },
     { title: 'The Godfather: Part II', year: 1974 },
@@ -108,7 +108,7 @@ const ingredients = [
     { title: 'Monty Python and the Holy Grail', year: 1975 },
 ];
 
-
+*/
 class IngredientList extends React.Component {
     constructor(props) {
         super(props)
@@ -123,7 +123,7 @@ class IngredientList extends React.Component {
                 <Autocomplete
                     id="combo-box-demo"
                     options={ingredients}
-                    getOptionLabel={(option) => option.title}
+                    //getOptionLabel={(option) => option.title}
                     style={{ width: 300 }}
                     renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
                 />
