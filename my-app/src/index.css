@@ -20,7 +20,7 @@ body {
 .shoppingList {
     padding-top: unset;
     margin: unset;
-    width: 500px;
+    width: 530px;
     max-height: 100vh;
     overflow: auto;
     color: #374B73;
@@ -42,7 +42,7 @@ body {
 #children-pane {
     margin-left: 15px;
     position: absolute;
-    width: 420px;
+    width: 530px;
     height: calc(100% - (30vh + 30px));
     overflow: auto;
     top: calc(30vh + 30px);
@@ -59,6 +59,7 @@ body {
     margin-top: 5px;
     background-color: white;
 }
+
 #quant {
     float: left;
     margin-left:5px;
@@ -66,6 +67,15 @@ body {
     margin-top: 5px;
     background-color: white;
 }
+
+#quantLabel {
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-color: white;
+}
+
 #addButton img {
     position: fixed;
     left: 250px;
@@ -78,7 +88,7 @@ body {
 
 #trash {
     position: fixed;
-    left: 320px;
+    left: 330px;
     top: calc(20vh + 15px);
     padding-top: 1vh;
     height: 8vh;
@@ -89,7 +99,7 @@ body {
 
 #search {
     position: fixed;
-    left: 380px;
+    left: 400px;
     top: calc(20vh + 15px);
     padding-top: 1vh;
     height: 8vh;
@@ -103,7 +113,7 @@ body {
     right: 0;
     top: calc(20vh + 15px);
     bottom: 0;
-    width: calc(100% - 440px);
+    width: calc(100% - 550px);
     height: calc(100% - (20vh + 15px));
     margin-left: 15px;
     color: #374B73;
@@ -112,9 +122,9 @@ body {
 
     .recipeList h1 {
         color: #374B73;
-        width: calc(100% - 440px);
-        margin-top:unset;
-        padding-left:15px;
+        width: calc(100% - 550px);
+        margin-top: unset;
+        padding-left: 15px;
     }
 
 .miniHeader h1 {

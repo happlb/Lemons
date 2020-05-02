@@ -13,6 +13,8 @@ import trash from './myImgs/trash.svg';
 // trash img source: https://fontawesome.com/icons/trash-alt?style=solid
 
 const ingredients = ["onion", "milk", "eggs", "apple", "jalapeno"];
+const quantNums = ["1/4", "1/3", "1/2", "3/4","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
+const quantLabel = ["cups", "oz", "Amount", "teaspoon", "tablespoon"];
 
 class IngredientList extends React.Component {
     constructor(props) {
@@ -21,6 +23,10 @@ class IngredientList extends React.Component {
             value: '',
             numChildren: 1
         }
+    }
+
+    search() {
+        document.getElementById("recipeBox").innerHTML = "<h3>No Recipes Were Found</h3>";
     }
     render() {
         const children = [];
@@ -39,8 +45,8 @@ class IngredientList extends React.Component {
                     </div>
                     
                     <div>
-                        <div><img id='search' title="Search for Recipes" src={search} /></div>
-                        <div><img id='trash' title="Clear List" src={trash} /></div>
+                        <div><img id='search' title="Search for Recipes" src={search} onClick={() => this.search()} /></div>
+                        <div><img id='trash' title="Clear List" src={trash} onClick={() => this.setState({ numChildren: 1 })} /></div>
                     <ParentComponent addChild={this.onAddChild}>
                         {children}
                     </ParentComponent>
@@ -49,6 +55,8 @@ class IngredientList extends React.Component {
                 <div className="recipeList">
                     <div className='miniHeader'>
                         <h1>My Recipes</h1>
+                    </div>
+                    <div id='recipeBox'>
                     </div>
                 </div>
 
@@ -82,17 +90,25 @@ const ChildComponent = props =>
         <Autocomplete
             options={ingredients}
             //getOptionLabel={(option) => option.title}
-            style={{ width: 280 }}
+            style={{ width: 200 }}
             renderInput={(params) => <TextField {...params} label="Ingredient" variant="outlined"  />}
             />
         </div>
         <div id="quant">
             <Autocomplete
-                options={ingredients}
+                    options={quantNums}
                 //getOptionLabel={(option) => option.title}
                 style={{ width: 110 }}
                 renderInput={(params) => <TextField {...params} label="Quantity" variant="outlined" />}
             />
+            </div>
+            <div id="quantLabel">
+                <Autocomplete
+                    options={quantLabel}
+                    //getOptionLabel={(option) => option.title}
+                    style={{ width: 190 }}
+                    renderInput={(params) => <TextField {...params} label="Label" variant="outlined" />}
+                />
             </div>
             </div>
     }</div>;
