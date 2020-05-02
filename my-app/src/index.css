@@ -7,39 +7,38 @@ body {
 }
 
 .shoppingList {
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
-    width: 40%;
-    height: 100%;
+    width: 500px;
+    height:100vh;
     overflow: auto;
     margin-left:15px;
 }
 
 #firstTextField {
     float: left;
-    margin-bottom: 15px;
+
 }
 
-#textfieldz {
-    margin-top: 15px;
+#children-pane {
+    position: absolute;
+    left:0;
 }
 
-button {
-    position:fixed;
-    margin-left:15px;
-    font-size: 2em;
-    font-weight: bold;
-    border-radius: 5px;
-    background-color: white;
+#addButton {
+    float:right !important;
+    margin-right:10px;
+    height:55px;
+    width:auto;
 }
 
 
 .recipeList {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
-    width: 55%;
+    width: 10%;
     height: 100%;
     overflow: auto;
     margin-left: 15px;
