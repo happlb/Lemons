@@ -114,23 +114,53 @@ class IngredientList extends React.Component {
         super(props)
         this.state = {
             value: '',
+            numChildren: 0
         }
     }
     render() {
+        const children = [];
+        for (var i = 0; i < this.state.numChildren; i += 1) {
+            children.push(<ChildComponent key={i} number={i} />);
+        };
+
         return (
             <div className="shopping-list">
-                <h1>Shopping List for {this.props.name}</h1>
+                <h1>My Ingredients {this.props.name}</h1>
                 <Autocomplete
                     id="combo-box-demo"
                     options={ingredients}
                     //getOptionLabel={(option) => option.title}
                     style={{ width: 300 }}
-                    renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+                    renderInput={(params) => <TextField {...params} label="Add an Ingredient" variant="outlined" />}
                 />
+                <div>
+                    <ParentComponent addChild={this.onAddChild}>
+                        {children}
+                    </ParentComponent>
+                </div>
             </div>
+           
+
         );
     }
+    onAddChild = () => {
+        this.setState({
+            numChildren: this.state.numChildren + 1
+        });
+    }
 }
+
+
+const ParentComponent = props => (
+    <div className="card calculator">
+        <p><a href="#" onClick={props.addChild}>Add Another Child Component</a></p>
+        <div id="children-pane">
+            {props.children}
+        </div>
+    </div>
+);
+
+const ChildComponent = props => <div>{"I am child " + props.number}</div>;
 
 /* eslint-disable no-use-before-define */
 
