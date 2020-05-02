@@ -152,8 +152,8 @@ class IngredientList extends React.Component {
 
 
 const ParentComponent = props => (
-    <div className="card calculator">
-        <p><a href="#" onClick={props.addChild}>Add Another Child Component</a></p>
+    <div className="addButton">
+        <p><button onClick={props.addChild}>Add Another Child Component</button></p>
         <div id="children-pane">
             {props.children}
         </div>
