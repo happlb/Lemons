@@ -17,6 +17,21 @@ body {
     margin: unset;
 }
 
+#menu {
+    color: black;
+    position: fixed;
+    top: 8vh;
+    left: 520px;
+    padding-right: 5px;
+    font-size: 2vw;
+}
+
+    #menu a {
+        padding-left: 4vw;
+        text-decoration: none;
+        color: #374B73;
+    }
+
 .shoppingList {
     padding-top: unset;
     margin: unset;
@@ -78,7 +93,7 @@ body {
 
 #addButton img {
     position: fixed;
-    left: 250px;
+    left: 360px;
     top: calc(20vh + 15px);
     padding-top: 1vh;
     height: 8vh;
@@ -88,7 +103,7 @@ body {
 
 #trash {
     position: fixed;
-    left: 330px;
+    left: 435px;
     top: calc(20vh + 15px);
     padding-top: 1vh;
     height: 8vh;
@@ -99,7 +114,7 @@ body {
 
 #search {
     position: fixed;
-    left: 400px;
+    left: 495px;
     top: calc(20vh + 15px);
     padding-top: 1vh;
     height: 8vh;
@@ -118,6 +133,7 @@ body {
     margin-left: 15px;
     color: #374B73;
     border-left: 15px solid #374B73;
+
 }
 
     .recipeList h1 {
@@ -127,16 +143,38 @@ body {
         padding-left: 15px;
     }
 
+#printIcon {
+    position: fixed;
+    right: 85px;
+    top: calc(20vh + 15px);
+    padding-top: 1vh;
+    height: 8vh;
+    width: auto;
+    cursor: pointer;
+    transform: scaleX(-1);
+}
+
+#heartOutline {
+    position: fixed;
+    right: 15px;
+    top: calc(20vh + 15px);
+    padding-top: 1vh;
+    height: 8vh;
+    width: auto;
+    cursor: pointer;
+    transform: scaleX(-1);
+}
+
 .miniHeader h1 {
     background-color: #FF8197;
     padding-top: 2vh;
     height: 10vh;
     color: white;
     width: 100%;
+    border-bottom: 5px solid #374B73;
 }
 
 .mainheader {
-
     height: 20vh;
     background-color: #FFF1ED;
 }
