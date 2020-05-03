@@ -40,6 +40,11 @@ class IngredientList extends React.Component {
     }
 
     search() {
+        
+       /* for (var i = 0; i < children.length; i++) {
+            console.log(children[i].value());
+        }*/
+        
         fetch(url, {
             headers: {
                 'Content-Type': 'application/json',
@@ -94,9 +99,6 @@ class IngredientList extends React.Component {
                 </div>
 
                 </div>
-            
-           
-
         );
     }
     onAddChild = () => {
@@ -119,23 +121,23 @@ const ParentComponent = props => (
 const ChildComponent = props =>
     <div>{
         <div>
-    <div id="textfieldz">
-        <Autocomplete
-            options={ingredients}
-            //getOptionLabel={(option) => option.title}
-            style={{ width: 200 }}
-            renderInput={(params) => <TextField {...params} label="Ingredient" variant="outlined"  />}
-            />
-        </div>
-        <div id="quant">
-            <Autocomplete
-                    options={quantNums}
+            <div className="textfieldz">
+                <Autocomplete
+                 options={ingredients}
                 //getOptionLabel={(option) => option.title}
-                style={{ width: 110 }}
-                renderInput={(params) => <TextField {...params} label="Quantity" variant="outlined" />}
+                style={{ width: 200 }}
+                renderInput={(params) => <TextField {...params} label="Ingredient" variant="outlined"  />}
+                />
+            </div>
+            <div className="quant">
+                 <Autocomplete
+                  options={quantNums}
+                  //getOptionLabel={(option) => option.title}
+                  style={{ width: 110 }}
+                  renderInput={(params) => <TextField {...params} label="Quantity" variant="outlined" />}
             />
             </div>
-            <div id="quantLabel">
+            <div className="quantLabel">
                 <Autocomplete
                     options={quantLabel}
                     //getOptionLabel={(option) => option.title}

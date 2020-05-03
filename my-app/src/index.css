@@ -68,14 +68,14 @@ body {
 
 
 
-#textfieldz {
+.textfieldz {
     float:left;
     margin-bottom: 4px;
     margin-top: 6px;
     background-color: white;
 }
 
-#quant {
+.quant {
     float: left;
     margin-left:5px;
     margin-bottom: 4px;
@@ -83,7 +83,7 @@ body {
     background-color: white;
 }
 
-#quantLabel {
+.quantLabel {
     float: left;
     margin-left: 5px;
     margin-bottom: 4px;
