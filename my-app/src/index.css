@@ -55,24 +55,24 @@ body {
 
 #textfieldz {
     float:left;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: 4px;
+    margin-top: 6px;
     background-color: white;
 }
 
 #quant {
     float: left;
     margin-left:5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: 4px;
+    margin-top: 6px;
     background-color: white;
 }
 
 #quantLabel {
     float: left;
     margin-left: 5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: 4px;
+    margin-top: 6px;
     background-color: white;
 }
 

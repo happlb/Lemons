@@ -7,14 +7,38 @@ import cartplussolid from './myImgs/cartplussolid.svg';
 import logo from './myImgs/logo.PNG';
 import search from './myImgs/searchsolid.svg';
 import trash from './myImgs/trash.svg';
-
+const id = 'a85e8f22';
+const accessKey = '28c66150a96c07535c6b30fe06a9d079';
 //add button img source: https://fontawesome.com/icons/cart-plus?style=solid
 // search img source: https://fontawesome.com/icons/search?style=solid
 // trash img source: https://fontawesome.com/icons/trash-alt?style=solid
 
 const ingredients = ["onion", "milk", "eggs", "apple", "jalapeno"];
 const quantNums = ["1/4", "1/3", "1/2", "3/4","1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
-const quantLabel = ["cups", "oz", "Amount", "teaspoon", "tablespoon"];
+const quantLabel = ["cups", "oz", "amount", "teaspoon", "tablespoon"];
+
+const url = "https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=chicken&app_id=c1c9c231&app_key=3f40d79b25897e034e24516add90ae3b"
+//const Http = new XMLHttpRequest();
+//const url = 'https://api.edamam.com/search?q=chicken&app_id=a85e8f22&app_key=28c66150a96c07535c6b30fe06a9d079&from=0&to=3&calories=591-722&health=alcohol-free';
+//"https://api.edamam.com/api/nutrition-data?app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&ingr=1%20large%20apple
+
+fetch(url, {
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*'
+  }
+})
+
+   .then(response => response.json())
+   .then(data => console.log(data));
+/*Http.open("GET", url);
+Http.send();
+
+Http.onreadystatechange = (e) => {
+    console.log(Http.responseText)
+}*/
+
+
 
 class IngredientList extends React.Component {
     constructor(props) {
@@ -117,12 +141,7 @@ const ChildComponent = props =>
 // ========================================
 
 ReactDOM.render(<IngredientList />, document.getElementById("root"));
-/*function setButtonHeight() {
-    var elmnt = document.getElementById("textfieldz");
-    console.log("here");
-    // var txt = "Height including padding and border: " + elmnt.offsetHeight + "px<br>";
-    // document.getElementById("addButton").height = elmnt.offsetHeigh * (numChildren-1) + 'px';
-}*/
+
 
 
 
