@@ -18,25 +18,7 @@ const quantNums = ["1/4", "1/3", "1/2", "3/4","1", "2", "3", "4", "5", "6", "7",
 const quantLabel = ["cups", "oz", "amount", "teaspoon", "tablespoon"];
 
 const url = "https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=chicken&app_id=c1c9c231&app_key=3f40d79b25897e034e24516add90ae3b"
-//const Http = new XMLHttpRequest();
-//const url = 'https://api.edamam.com/search?q=chicken&app_id=a85e8f22&app_key=28c66150a96c07535c6b30fe06a9d079&from=0&to=3&calories=591-722&health=alcohol-free';
-//"https://api.edamam.com/api/nutrition-data?app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&ingr=1%20large%20apple
 
-fetch(url, {
-    headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*'
-  }
-})
-
-   .then(response => response.json())
-   .then(data => console.log(data));
-/*Http.open("GET", url);
-Http.send();
-
-Http.onreadystatechange = (e) => {
-    console.log(Http.responseText)
-}*/
 
 
 
@@ -50,7 +32,18 @@ class IngredientList extends React.Component {
     }
 
     search() {
-        document.getElementById("recipeBox").innerHTML = "<h3>No Recipes Were Found</h3>";
+        fetch(url, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        })
+
+            .then(response => response.json())
+            .then(data => this.populate(data));
+    }
+    populate(data) {
+        console.log(data)
     }
     render() {
         const children = [];
