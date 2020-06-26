@@ -1,12 +1,9 @@
 import React from "react";
-import AddAnIngredientField from "./AddAnIngredientField";
-import AddedIngredientFields from "./AddedIngredientFields";
+//import AddAnIngredientField from "../searchRecipie/AddAnIngredientField";
+//import AddedIngredientFields from "../searchRecipie/AddedIngredientFields";
 const HomePage = () => (
   <div>
     <h1>Home Page</h1>
-    <h2>Added Ingredients: </h2>
-    <AddedIngredientFields />
-    <AddAnIngredientField />
   </div>
 );
 

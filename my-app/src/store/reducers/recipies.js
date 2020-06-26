@@ -6,6 +6,9 @@ const initState = {
 };
 
 export default createReducer(initState, {
+  addRecipies: (state, { payload }) => {
+    state.recipies = payload;
+  },
   updateIngredients: (state, { payload }) => {
     state.ingredents = payload;
   },
@@ -21,6 +24,7 @@ export default createReducer(initState, {
   },
 });
 
+export const addRecipies = createAction("addRecipies");
 export const updateIngredients = createAction("updateIngredients");
 export const removeIngredient = createAction("removeIngredient");
 export const addIngredient = createAction("addIngredient");
