@@ -3,7 +3,8 @@ import AddAnIngredientField from "./AddAnIngredientField";
 import AddedIngredientFields from "./AddedIngredientFields";
 import SearchRecipieButton from "./SearchRecipieButton";
 import FoundRecipies from "./FoundRecipies";
-const HomePage = () => (
+
+export const HomePage = () => (
   <div>
     <h2>Added Ingredients: </h2>
     <AddedIngredientFields />

@@ -7,7 +7,7 @@ const initState = {
 
 export default createReducer(initState, {
   addRecipies: (state, { payload }) => {
-    state.recipies = payload;
+    state.recipies = payload ? payload : [];
   },
   updateIngredients: (state, { payload }) => {
     state.ingredents = payload;
@@ -18,7 +18,7 @@ export default createReducer(initState, {
     }
   },
   addIngredient: (state, { payload }) => {
-    if (payload !== "" && !state.ingredents.includes(payload)) {
+    if (payload && !state.ingredents.includes(payload)) {
       state.ingredents.push(payload);
     }
   },

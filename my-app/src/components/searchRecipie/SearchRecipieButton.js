@@ -16,6 +16,17 @@ export default connect(mapStateToProps)(SearchRecipieButton);
 function mapStateToProps(state) {
   return { ingredents: state.ingredents };
 }
+// const increment = () => ({ type: 'INCREMENT' })
+// const decrement = () => ({ type: 'DECREMENT' })
+// const reset = () => ({ type: 'RESET' })
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     // dispatching actions returned by action creators
+//     increment: () => dispatch(increment()),
+//     decrement: () => dispatch(decrement()),
+//     reset: () => dispatch(reset()),
+//   };
+// };
 
 function callAPI(props) {
   const APIKey = "9504b6e1d94146f380aa780bb448628a";
