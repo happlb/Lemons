@@ -8,9 +8,7 @@ const { dispatch } = store;
 const FoundRecipies = (props) => {
   const numbers = props.recipies;
   const AddedIngedents = numbers.map((curRecipie) => (
-    <div key={curRecipie.id}>
-      <li>{curRecipie.title}</li>
-    </div>
+    <div key={curRecipie.id}>{curRecipie.title}</div>
   ));
   return <ul>{AddedIngedents}</ul>;
 };
