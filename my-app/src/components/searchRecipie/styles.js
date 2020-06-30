@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const AddFormContainer = styled.div`
   height: 100%;
@@ -10,25 +10,34 @@ export const AddFormContainer = styled.div`
       margin-right: 10px;
     }
   }
-`
+`;
 
 export const FormSpace = styled.div`
   margin: 15px 0 15px 0;
   flex-grow: 1;
   min-width: 250px;
-`
+`;
 
 export const RowSpaced = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
+`;
 
 export const InputField = styled.div`
   flex: auto;
   padding-right: 10px;
-`
+`;
 
 export const MyButton = styled.div`
   flex: none;
-`
+`;
+export const MyRecipieContainer = styled.div`
+  width: 90%;
+  display: flex;
+  flex: auto;
+  align-items: flex-start;
+  margin: 10px;
+  height: 300px;
+  border: 2px solid black;
+`;

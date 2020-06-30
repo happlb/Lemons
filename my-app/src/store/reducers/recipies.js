@@ -2,7 +2,18 @@ import { createReducer, createAction } from "@reduxjs/toolkit";
 
 const initState = {
   ingredents: [],
-  recipies: [],
+  recipies: [
+    {
+      image: "https://spoonacular.com/recipeImages/716429-312x231.jpg",
+      title: "beans",
+      id: "1",
+    },
+    {
+      image: "https://spoonacular.com/recipeImages/716429-312x231.jpg",
+      title: "beans again",
+      id: "1",
+    },
+  ],
 };
 
 export default createReducer(initState, {
