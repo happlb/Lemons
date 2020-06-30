@@ -1,17 +1,20 @@
-import React from "react";
-import AddAnIngredientField from "./AddAnIngredientField";
-import AddedIngredientFields from "./AddedIngredientFields";
-import SearchRecipieButton from "./SearchRecipieButton";
-import FoundRecipies from "./FoundRecipies";
+import React from 'react'
+import AddAnIngredientField from './AddAnIngredientField'
+import AddedIngredientFields from './AddedIngredientFields'
+import SearchRecipieButton from './SearchRecipieButton'
+import FoundRecipies from './FoundRecipies'
+import { MyPageContainer, MyIngredentContainer } from './styles'
 
 export const HomePage = () => (
-  <div>
-    <h2>Added Ingredients: </h2>
-    <AddedIngredientFields />
-    <AddAnIngredientField />
-    <SearchRecipieButton />
+  <MyPageContainer>
+    <MyIngredentContainer>
+      <h2>My Pantry </h2>
+      <AddAnIngredientField />
+      <AddedIngredientFields />
+      <SearchRecipieButton />
+    </MyIngredentContainer>
     <FoundRecipies />
-  </div>
-);
+  </MyPageContainer>
+)
 
-export default HomePage;
+export default HomePage

@@ -1,18 +1,23 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { Nav } from '../searchRecipie/styles'
 const Header = () => {
-  const activeStyle = { color: "#F15B2A" };
+  const activeStyle = { color: '#F15B2A' }
   return (
-    <div>
-      <NavLink activeStyle={activeStyle} exact to="/">
+    <Nav>
+      <NavLink
+        style={{ paddingRight: '15px' }}
+        activeStyle={activeStyle}
+        exact
+        to='/'
+      >
         Home
       </NavLink>
-      <NavLink activeStyle={activeStyle} to="searchRecipie">
+      <NavLink activeStyle={activeStyle} to='searchRecipie'>
         Recipie Search
       </NavLink>
-    </div>
-  );
-};
+    </Nav>
+  )
+}
 
-export default Header;
+export default Header

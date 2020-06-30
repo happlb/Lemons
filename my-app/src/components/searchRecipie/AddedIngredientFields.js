@@ -1,32 +1,33 @@
-import React from "react";
-import store from "../../store";
-import { connect } from "react-redux";
-import { removeIngredient } from "../../store/reducers/recipies";
+import React from 'react'
+import store from '../../store'
+import { connect } from 'react-redux'
+import { removeIngredient } from '../../store/reducers/recipies'
+import { MyButton } from './styles'
+const { dispatch } = store
 
-const { dispatch } = store;
-
-const AddedIngredientFields = (props) => {
-  const numbers = props.ingredents;
-  const AddedIngedents = numbers.map((AddedIngedent) => (
-    <div key={AddedIngedent}>
-      <li>{AddedIngedent}</li>
+const AddedIngredientFields = props => {
+  const AddedIngedents = props.ingredents.map(AddedIngedent => (
+    <div style={{ textAlign: 'right' }} key={AddedIngedent}>
+      {AddedIngedent}
       <input
-        type="submit"
-        value="Delete"
-        onClick={(e) => removeCurIngredient(e, AddedIngedent)}
+        style={{ float: 'right' }}
+        style={{ marginLeft: '25px', marginTop: '10px' }}
+        type='submit'
+        value='Delete'
+        onClick={e => removeCurIngredient(e, AddedIngedent)}
       />
     </div>
-  ));
-  return <ul>{AddedIngedents}</ul>;
-};
+  ))
+  return <div>{AddedIngedents}</div>
+}
 
-export default connect(mapStateToProps)(AddedIngredientFields);
+export default connect(mapStateToProps)(AddedIngredientFields)
 
 export const removeCurIngredient = (e, AddedIngedent) => {
-  e.preventDefault();
-  dispatch(removeIngredient(AddedIngedent));
-};
+  e.preventDefault()
+  dispatch(removeIngredient(AddedIngedent))
+}
 
-function mapStateToProps(state) {
-  return { ingredents: state.ingredents };
+function mapStateToProps (state) {
+  return { ingredents: state.ingredents }
 }
