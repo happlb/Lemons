@@ -16,15 +16,19 @@ const SearchRecipieButton = props => (
 export default connect(mapStateToProps)(SearchRecipieButton)
 
 function mapStateToProps (state) {
-  return { ingredents: state.ingredents }
+  return { ingredents: state.ingredents, veg: state.veg }
 }
 
 function getRecipiesbyIngredient (props) {
   const ingredients = props.ingredents.map(ingredent => ingredent + ',')
+  const veg = props.veg ? 'vegetarian' : ''
+  console.log(veg)
   if (ingredients.length) {
     fetch(
-      'https://cors-anywhere.herokuapp.com/https://api.spoonacular.com/recipes/findByIngredients?ingredients=' +
+      'https://cors-anywhere.herokuapp.com/https://api.spoonacular.com/recipes/complexSearch?fillIngredients=true&addRecipeInformation=true&includeIngredients=' +
         ingredients +
+        '&diet=' +
+        veg +
         '&apiKey=' +
         APIKey,
       {
@@ -35,7 +39,7 @@ function getRecipiesbyIngredient (props) {
       }
     )
       .then(response => {
-        response.json().then(value => dispatch(addRecipies(value)))
+        response.json().then(value => dispatch(addRecipies(value.results)))
       })
       .catch(err => {
         console.log(err)

@@ -24,6 +24,7 @@ export const MyPageContainer = styled.div`
   box-sizing: border-box;
 `
 export const MyRecipieContainer = styled.div`
+  margin-left: auto;
   display: flex;
   align-items: flex-start;
   margin: 10px;

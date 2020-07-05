@@ -43,6 +43,7 @@ export const setRecipies = event => {
   dispatch(addIngredient(ingredent))
 }
 
-export const setVegRecipies = event => {
-  dispatch(setVeg(veg))
+export const setVegRecipies = e => {
+  veg = !veg
+  dispatch(setVeg(e.target.checked))
 }

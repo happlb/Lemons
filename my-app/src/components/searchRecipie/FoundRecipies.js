@@ -12,15 +12,19 @@ const FoundRecipies = props => {
     <div key={curRecipie.id}>
       <MyRecipieContainer onClick={e => getRecipiesbyId(curRecipie.id)}>
         <img src={curRecipie.image} />
-        <div>
-          <h3>{curRecipie.title}</h3>
+        <div style={{ marginLeft: '5px' }}>
+          <h3 style={{ marginBottom: '5px', textDecorationLine: 'underline' }}>
+            {curRecipie.title}
+          </h3>
 
-          <h4 style={{ marginBottom: 'unset' }}>Ingredients:</h4>
+          <h4 style={{ marginBottom: 'unset', marginTop: 'unset' }}>
+            Ingredients:
+          </h4>
           <div>
             {curRecipie.usedIngredients.map(usedIngredient => (
               <div key={usedIngredient.original}>{usedIngredient.original}</div>
             ))}
-            {curRecipie.missedIngredients.map(missingIngredient => (
+            {curRecipie.extendedIngredients.map(missingIngredient => (
               <div style={{ color: 'red' }} key={missingIngredient.original}>
                 {missingIngredient.original}
               </div>
