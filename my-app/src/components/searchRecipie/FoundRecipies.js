@@ -24,7 +24,7 @@ const FoundRecipies = props => {
             {curRecipie.usedIngredients.map(usedIngredient => (
               <div key={usedIngredient.original}>{usedIngredient.original}</div>
             ))}
-            {curRecipie.extendedIngredients.map(missingIngredient => (
+            {curRecipie.missedIngredients.map(missingIngredient => (
               <div style={{ color: 'red' }} key={missingIngredient.original}>
                 {missingIngredient.original}
               </div>
