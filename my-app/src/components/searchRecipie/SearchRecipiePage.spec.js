@@ -4,18 +4,36 @@ import SearchRecipiePage from "./SearchRecipiePage";
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { Provider } from "react-redux";
+import configureStore from "redux-mock-store";
+import { wrap } from "module";
 
 configure({ adapter: new Adapter() });
 
 function renderSearchRecipiePage(args) {
-  const defaultProps = {};
-
+  const defaultProps = {
+    vegan: false,
+    veg: false,
+    ingredents: [],
+    recipies: [],
+  };
+  const mockStore = configureStore();
   const props = { ...defaultProps, ...args };
-  return mount(<SearchRecipiePage {...props} />);
+  const store = mockStore(props);
+  console.log("state", store.getState());
+
+  return mount(
+    <Provider store={store}>
+      <SearchRecipiePage />
+    </Provider>
+  );
 }
 
-xit("renders init", () => {
+it("renders init", () => {
   const wrapper = renderSearchRecipiePage();
-  expect(wrapper.find("form")).length.toBe(1);
-  expect(wrapper.find("h2").text()).length.toEqual("Add");
+  expect(wrapper.find("div.AddedIngedents").text()).toEqual("");
+});
+
+it("renders init", () => {
+  const wrapper = renderSearchRecipiePage({ ingredents: ["apple"] });
+  expect(wrapper.find("div.AddedIngedents").text()).toEqual("apple");
 });

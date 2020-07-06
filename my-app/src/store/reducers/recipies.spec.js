@@ -13,14 +13,14 @@ function renderSearchRecipiePage(args) {
 
 describe("test ingredient list", () => {
   let ingredent;
-  it("adds the passed in ingredent", () => {
+  xit("adds the passed in ingredent", () => {
     ingredent = "Bread";
     dispatch(addIngredient(ingredent));
     const state = store.getState();
     expect(state.ingredents).toEqual(["Bread"]);
   });
 
-  it("does not add the duplicate passed in ingredent or empty", () => {
+  xit("does not add the duplicate passed in ingredent or empty", () => {
     ingredent = "Bread";
     dispatch(addIngredient(ingredent));
     ingredent = "";
@@ -29,21 +29,21 @@ describe("test ingredient list", () => {
     expect(state.ingredents).toEqual(["Bread"]);
   });
 
-  it("does not throw an error or change state when removing an un added ingredent", () => {
+  xit("does not throw an error or change state when removing an un added ingredent", () => {
     ingredent = "tomato";
     dispatch(removeIngredient(ingredent));
     const state = store.getState();
     expect(state.ingredents).toEqual(["Bread"]);
   });
 
-  it("removes the ingredent", () => {
+  xit("removes the ingredent", () => {
     ingredent = "Bread";
     dispatch(removeIngredient(ingredent));
     const state = store.getState();
     expect(state.ingredents).toEqual([]);
   });
 
-  it("does not throw an error or change state when calling remove on an empty list", () => {
+  xit("does not throw an error or change state when calling remove on an empty list", () => {
     ingredent = "";
     dispatch(removeIngredient(ingredent));
     const state = store.getState();
@@ -53,14 +53,14 @@ describe("test ingredient list", () => {
 
 describe("test recipie list", () => {
   let recipies;
-  it("adds the recipies", () => {
+  xit("adds the recipies", () => {
     recipies = ["test one", " test two", "test three"];
     dispatch(addRecipies(recipies));
     const state = store.getState();
     expect(state.recipies).toEqual(recipies);
   });
 
-  it("does not throw error when no recipies are recived", () => {
+  xit("does not throw error when no recipies are recived", () => {
     recipies = null;
     dispatch(addRecipies(recipies));
     const state = store.getState();

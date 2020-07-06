@@ -1,31 +1,36 @@
-import { createReducer, createAction } from '@reduxjs/toolkit'
+import { createReducer, createAction } from "@reduxjs/toolkit";
 
 const initState = {
+  vegan: false,
   veg: false,
   ingredents: [],
-  recipies: []
-}
+  recipies: [],
+};
 
 export default createReducer(initState, {
   ADD_RECIPIES: (state, { payload }) => {
-    state.recipies = payload ? payload : []
+    state.recipies = payload ? payload : [];
   },
   REMOVE_INGREDIENT: (state, { payload }) => {
     if (state.ingredents.includes(payload)) {
-      state.ingredents.splice(state.ingredents.indexOf(payload), 1)
+      state.ingredents.splice(state.ingredents.indexOf(payload), 1);
     }
   },
   ADD_INGREDIENT: (state, { payload }) => {
     if (payload && !state.ingredents.includes(payload)) {
-      state.ingredents.push(payload)
+      state.ingredents.push(payload);
     }
   },
   SET_VEG: (state, { payload }) => {
-    state.veg = payload
-  }
-})
+    state.veg = payload;
+  },
+  SET_VEGAN: (state, { payload }) => {
+    state.vegan = payload;
+  },
+});
 
-export const addRecipies = createAction('ADD_RECIPIES')
-export const removeIngredient = createAction('REMOVE_INGREDIENT')
-export const addIngredient = createAction('ADD_INGREDIENT')
-export const setVeg = createAction('SET_VEG')
+export const addRecipies = createAction("ADD_RECIPIES");
+export const removeIngredient = createAction("REMOVE_INGREDIENT");
+export const addIngredient = createAction("ADD_INGREDIENT");
+export const setVeg = createAction("SET_VEG");
+export const setVegan = createAction("SET_VEGAN");
