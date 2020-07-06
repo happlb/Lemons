@@ -33,7 +33,7 @@ it("renders init", () => {
   expect(wrapper.find("div.AddedIngedents").text()).toEqual("");
 });
 
-it("checks test", () => {
+it("renders init", () => {
   const wrapper = renderSearchRecipiePage({ ingredents: ["apple"] });
   expect(wrapper.find("div.AddedIngedents").text()).toEqual("apple");
 });
