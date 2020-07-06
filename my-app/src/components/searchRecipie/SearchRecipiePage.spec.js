@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { mount } from "enzyme";
 import SearchRecipiePage from "./SearchRecipiePage";
@@ -5,6 +6,17 @@ import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
+=======
+import React from 'react'
+import { mount } from 'enzyme'
+import SearchRecipiePage from './SearchRecipiePage'
+import { configure } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+import { Provider } from 'react-redux'
+import configureStore from 'redux-mock-store'
+
+import { wrap } from 'module'
+>>>>>>> master
 
 configure({ adapter: new Adapter() });
 
